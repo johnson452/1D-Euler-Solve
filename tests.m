@@ -24,6 +24,9 @@ xlabel("x")
 ylabel("y")
 
 
+%Sup testing
+disp(sup([-5,2,1,5]));
+
 
 % Compute the edge values
 function [W_plus, W_minus] = edges(W_tilde)
@@ -61,4 +64,10 @@ dx = x(2)-x(1);
 x2 = linspace(0+dx/2,1-dx/2,Nx-1);
 y_interp = interp1(x,y,x2,'spline');
 y_interp = [y_interp(end),y_interp,y_interp(1)]; 
+end
+
+%Sup function
+function [sup_val] = sup(values)
+[maxB, index] = max(abs(values));
+sup_val = maxB * sign(values(index));
 end
